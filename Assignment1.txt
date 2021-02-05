@@ -1,0 +1,116 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+
+
+/*
+Find out if a Tree is Balanced. 
+*/
+
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        int heightLeft = height(root.left);
+        int heightRight = height(root.right);
+        
+        return (Math.abs(heightLeft - heightRight) < 2) &&
+            isBalanced(root.left) &&
+            isBalanced(root.right);  
+    }
+    
+    int height(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        
+        int hLeft = height(node.left);
+        int hRight = height(node.right);
+        
+        int max = Math.max(hLeft, hRight);
+        return max+1;    
+    }
+}
+
+
+
+
+/*
+Find Minimum depth of all the leaves in a tree.
+*/
+
+class Solution {
+    public int minDepth(TreeNode root) {
+        if (root == null){
+         return 0;   
+        }
+        int dLeft = minDepth(root.left);
+        int dRight = minDepth(root.right);
+        
+        int childMinDepth;
+        if (dLeft == 0 || dRight == 0) {
+            childMinDepth = Math.max(dLeft, dRight);
+        } else {
+            childMinDepth = Math.min(dLeft, dRight);   
+        }
+        return childMinDepth+1;  
+        
+    }
+}
+
+
+
+
+/*
+Print all the leaves of a tree.
+*/
+
+class Solution {
+    void printLeaveNode(TreeNode root) {
+        if ( root == null ) {
+            return;
+        }
+        if ( root.left == null && root.right == null ) {
+            System.out.println(root.val);
+        } else if ( root.left != null || root.right != null) {
+            printLeaveNode(root.left);
+            printLeaveNode(root.right);
+        }
+    }
+
+
+
+
+/*
+Print sum of all the left leaves.
+*/
+
+class Solution {
+    public int sumOfLeftLeaves(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        
+        int left = sumOfLeftLeaves(root.left);
+        int right = sumOfLeftLeaves(root.right);
+        
+        if (root.left!=null && root.left.left == null && root.left.right == null) {
+            return left + right + root.left.val;
+        }
+        return  left + right;
+    }
+}
