@@ -17,7 +17,7 @@
 
 
 /*
-Find out if a Tree is Balanced. 
+1. Find out if a Tree is Balanced. ( Tree is balanced if for every node difference between height of left and right is <=1) https://leetcode.com/problems/balanced-binary-tree/
 */
 
 class Solution {
@@ -50,7 +50,7 @@ class Solution {
 
 
 /*
-Find Minimum depth of all the leaves in a tree.
+2. Find Minimum depth of all the leaves in a tree. https://leetcode.com/problems/minimum-depth-of-binary-tree/
 */
 
 class Solution {
@@ -76,7 +76,7 @@ class Solution {
 
 
 /*
-Print all the leaves of a tree.
+3. Print all the leaves of a tree.  https://leetcode.com/problems/find-leaves-of-binary-tree/
 */
 
 class Solution {
@@ -96,7 +96,7 @@ class Solution {
 
 
 /*
-Print sum of all the left leaves.
+4. Print sum of all the left leaves. https://leetcode.com/problems/sum-of-left-leaves/
 */
 
 class Solution {
