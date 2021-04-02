@@ -1,4 +1,3 @@
-package LeetCode;
 
 /*
 Time & Space complexity

@@ -1,4 +1,4 @@
-package LeetCode;
+
 /*
 Time & Space complexity
 Time complexity: O(n), where n is the max length of n1 or n2
