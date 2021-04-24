@@ -6,7 +6,7 @@ find shortest paths from source to all vertices in the given graph.
  */
 
 public class Problem1 {
-    static final int VALUE = 9;
+    static final int VALUE = 7;
     public int minDistance(int dist[], Boolean sptSet[]){
         int min = Integer.MAX_VALUE, min_index = -1;
 
@@ -20,9 +20,9 @@ public class Problem1 {
         return min_index;
     }
     void printSolution(int dist[]) {
-        System.out.println("Vertex \t\t Distance from Source");
+        System.out.println("Distance from Source");
         for (int i = 0; i < VALUE; i++) {
-            System.out.println(i + " \t\t " + dist[i]);
+            System.out.println(i + " -----> " + dist[i]);
         }
     }
     void adjacencyMatrix(int graph[][], int source) {
@@ -50,16 +50,15 @@ public class Problem1 {
     }
 
     public static void main(String[] args) {
+        char temp;
 
-        int graph[][] = new int[][] { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
-                { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
-                { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
-                { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
-                { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
-                { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
-                { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
-                { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
-                { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
+        int graph[][] = new int[][] { { 0, 4, 0, 0, 0, 8, 0 },
+                { 4, 0, 8, 0, 0, 11, 0 },
+                { 0, 8, 0, 7, 0, 0, 2 },
+                { 0, 0, 7, 0, 9, 0, 0 },
+                { 0, 0, 4, 14, 10, 0, 0 },
+                { 8, 11, 0, 0, 0,  0, 7 },
+                { 0, 0, 2, 0, 0, 0, 0 } };
         Problem1 p = new Problem1();
         p.adjacencyMatrix(graph, 0);
 
